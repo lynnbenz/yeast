@@ -1,6 +1,7 @@
 # yeast
 
 Hier sind die id der Locations in Budapest.
+Wir haben alle Daten von jeder Location, aber können wir diese kombinieren zu einer URL? oder wie sollen wir das auflisten?
 
 {
   "meta": {
