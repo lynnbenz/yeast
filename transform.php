@@ -7,31 +7,37 @@ include 'extract.php';
 
 //echo "Hello World!";
 
-//print_r($weather_data);
+//print_r($air_quality);
 
 
 //make map with lat / lon to location
 $locations = [
-    '46.84,9.52' => 'Chur',
-    '46.94,7.44' => 'Bern'
+    '22.56,88.36' => 'Kolkata',
+    '23.11,113.31' => 'Guangzhou',
+    '23.81,90.41' => 'Dhaka',
+    '19.3,97.97' => 'Mae Hong Son',
+    '21.02,105.84' => 'Hanoi',
 ];
 
-// new function weather_condition
-function weather_condition($precipitation, $cloud_cover) {
-    if ($cloud_cover <=  80 && $precipitation == 0) {
-        return 'sunny';
-    } elseif ($cloud_cover > 80 && $precipitation < 5) {
-        return 'cloudy';
-    } elseif ($precipitation >= 5) {
-        return 'rainy';
-        }
+// new function air_quality_index
+function air_quality($lastvalue) {
+    if ($lastvalue <=  25) {
+        return 'good';
+    } elseif ($lastvalue <= 50) {
+        return 'moderate';
+    } elseif ($lastvalue <= 75) {
+        return 'unhealthy';
+    } elseif ($lastvalue <= 100) {
+        return 'dangerous';
+    }
+   
 }
 
 
 //Transorm data
-foreach ($weather_data as $index => $item) {
+foreach ($air_quality as $index => $item) {
 
-    $weather_data[$index]['temperature_2m'] = round($item['temperature_2m']);   
+    $[$index]['temperature_2m'] = round($item['temperature_2m']);   
    
     //convert lat / lon to location
     $coordinates = $item['latitude'] . ',' . $item['longitude'];
