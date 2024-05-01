@@ -6,7 +6,7 @@ $location = $_GET['location'];
 $url_kolkata = "https://api.openaq.org/v2/locations/8172";
 $url_guangzhou = "https://api.openaq.org/v2/locations/7753";
 $url_dhaka = "https://api.openaq.org/v2/locations/2445";
-$url_yerevan = "https://api.openaq.org/v2/locations/370669";
+$url_mae_hong_son = "https://api.openaq.org/v2/locations/225648";
 $url_hanoi = "https://api.openaq.org/v2/locations/2161312";
 
 $url = '';
@@ -16,10 +16,10 @@ if ($location == 'kolkata') {
     $url = $url_guangzhou;
 } else {$location == 'dhaka';
     $url = $url_dhaka;
-} else {$location == 'yerevan';
-    $url = $url_yerevan;
+} else {$location == 'mae_hong_son';
+    $url = $url_mae_hong_son;
 } else {$location == 'hanoi';
-    $url = $url_hanoi;
+    $url = $url_hanoi; 
 }
 
 $ch = curl_init($url);
@@ -33,30 +33,25 @@ curl_close($ch);
 // echo $output;
 
 
-
-
-
 //loop through the data / array with needed information 
 $data = json_decode($output, true);
 foreach ($data as $item) {
-    $latitude = $item['latitude'];
-    $longitude = $item['longitude'];
-    $temperature = $item['current']['temperature_2m'];
-    $precipitation = $item['current']['precipitation'];
-    $cloud_cover = $item['current']['cloud_cover'];
+    $location = $item['location'];
+    $lastvalue = $item['lastvalue'];
+    $unit = $item['current']['unit'];
+    $parameter = $item['current']['parameter'];
+    
 
-
-    $weather_data[] = [
-        'latitude' => $latitude,
-        'longitude' => $longitude,
-        'temperature_2m' => $temperature,
-        'precipitation' => $precipitation,
-        'cloud_cover' => $cloud_cover
-    ];
+    $air_quality[] = [
+        'location' => $location,
+        'lastvalue' => $lastvalue,
+        'unit' => $unit,
+        'parameter' => $parameter,
+        ];
     
 }
 
-//print_r($weather_data);
-//echo $weather_data[0]['latitude'];
+//print_r($air_quality);
+//echo $air_quality [0]['latitude'];
 
 ?>
