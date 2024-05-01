@@ -9,7 +9,7 @@ $url_dhaka = "https://api.openaq.org/v2/locations/2445";
 $url_mae_hong_son = "https://api.openaq.org/v2/locations/225648";
 $url_hanoi = "https://api.openaq.org/v2/locations/2161312";
 
-$url = '';
+$url = 'https://599768-3.web.fhgr.ch';
 if ($location == 'kolkata') {
     $url = $url_kolkata;
 } else if($location == 'guangzhou') {
