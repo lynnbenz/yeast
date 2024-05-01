@@ -13,7 +13,7 @@ try {
     $pdo = new PDO($dsn, $username, $password, $options);
 
     // SQL-Query mit Platzhaltern für das Einfügen von Daten
-    $sql = "INSERT INTO weather (location, temperature, precipitation, cloud_cover, weather_condition) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO airquality (location, lastvalue, unit, parameter) VALUES (?, ?, ?, ?)";
 
     // Bereitet die SQL-Anweisung vor
     $stmt = $pdo->prepare($sql);
@@ -22,10 +22,9 @@ try {
     foreach ($weather_data as $item) {
         $stmt->execute([
             $item['location'],
-            $item['temperature_2m'],
-            $item['precipitation'],
-            $item['cloud_cover'],
-            $item['condition']
+            $item['lastvalue'],
+            $item['unit'],
+            $item['parameter'],
         ]);
     }
 
