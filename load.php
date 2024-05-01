@@ -6,7 +6,7 @@ include 'transform.php';
 // require once config.php
 require_once 'config.php';
 
-//echo $weather_data;
+//echo $air_quality;
 
 try {
     // Erstellt eine neue PDO-Instanz mit der Konfiguration aus config.php
