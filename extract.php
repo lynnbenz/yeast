@@ -9,28 +9,28 @@ $url_dhaka = "https://api.openaq.org/v2/locations/2445";
 $url_mae_hong_son = "https://api.openaq.org/v2/locations/225648";
 $url_hanoi = "https://api.openaq.org/v2/locations/2161312";
 
+$ch = curl_init($url);
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
 $url = 'https://599768-3.web.fhgr.ch';
 if ($location == 'kolkata') {
     $url = $url_kolkata;
 } else if($location == 'guangzhou') {
     $url = $url_guangzhou;
-} else {$location == 'dhaka';
+} else ($location == 'dhaka'){
     $url = $url_dhaka;
-} else {$location == 'mae_hong_son';
+} else($location == 'mae_hong_son'){
     $url = $url_mae_hong_son;
-} else {$location == 'hanoi';
+} else ($location == 'hanoi') {
     $url = $url_hanoi; 
 }
-
-$ch = curl_init($url);
-
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $output = curl_exec($ch);
 
 curl_close($ch);
 
-// echo $output;
+echo $output;
 
 
 //loop through the data / array with needed information 
