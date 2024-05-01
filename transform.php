@@ -20,7 +20,7 @@ $locations = [
 ];
 
 // new function air_quality_index
-function air_quality($lastvalue) {
+function air_quality_color($lastvalue) {
     if ($lastvalue <=  25) {
         return 'good';
     } elseif ($lastvalue <= 50) {
@@ -37,25 +37,25 @@ function air_quality($lastvalue) {
 //Transorm data
 foreach ($air_quality as $index => $item) {
 
-    $[$index]['temperature_2m'] = round($item['temperature_2m']);   
+    $air_quality[$index][''] = round($item['lastvalue']);   
    
     //convert lat / lon to location
     $coordinates = $item['latitude'] . ',' . $item['longitude'];
    
    // use map to get location
-    $weather_data[$index]['location'] = $locations[$coordinates];
+    $air_quality[$index]['location'] = $locations[$coordinates];
 
     //remove lat / lon
-    unset($weather_data[$index]['latitude']);
-    unset($weather_data[$index]['longitude']);
+    unset($air_quality[$index]['latitude']);
+    unset($air_quality[$index]['longitude']);
 
 
 // add weather condition
-    $weather_data[$index]['condition'] = weather_condition($item['precipitation'], $item['cloud_cover']);
+    $air_quality[$index]['air_quality'] = air_quality_color($item['lastvalue'],);
 
 }
 
-print_r($weather_data);
+print_r($air_quality);
 
 
 
