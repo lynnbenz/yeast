@@ -2,9 +2,9 @@
 
 // Datenbankverbindungsparameter
 $host = 'localhost';
-$dbname = '253531_10_1';
-$username = '253531_10_1';
-$password = '5401uGMdwAPx';
+$dbname = '599768_3_1';
+$username = '599768_3_1';
+$password = 't@9G2w1bcFi0';
 
 // DSN (Datenquellenname) für PDO
 $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8";
