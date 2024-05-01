@@ -1,7 +1,26 @@
 <?php
 
+$location = $_GET['location'];
+
 /* hier ist unsere URL für die Abfrage der API */    
-$url = "https://api.open-meteo.com/v1/forecast?latitude=46.8499,46.9481&longitude=9.5329,7.4474&current=temperature_2m,precipitation,cloud_cover&timezone=Europe%2FBerlin&forecast_days=1";
+$url_kolkata = "https://api.openaq.org/v2/locations/8172";
+$url_guangzhou = "https://api.openaq.org/v2/locations/7753";
+$url_dhaka = "https://api.openaq.org/v2/locations/2445";
+$url_yerevan = "https://api.openaq.org/v2/locations/370669";
+$url_hanoi = "https://api.openaq.org/v2/locations/2161312";
+
+$url = '';
+if ($location == 'kolkata') {
+    $url = $url_kolkata;
+} else if($location == 'guangzhou') {
+    $url = $url_guangzhou;
+} else {$location == 'dhaka';
+    $url = $url_dhaka;
+} else {$location == 'yerevan';
+    $url = $url_yerevan;
+} else {$location == 'hanoi';
+    $url = $url_hanoi;
+}
 
 $ch = curl_init($url);
 
