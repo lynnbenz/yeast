@@ -3,19 +3,19 @@
 $get_location = $_GET['location'];
 
 /* hier ist unsere URL für die Abfrage der API */    
-$url_kolkata = "https://api.openaq.org/v2/locations/8172";
+$url_dhopagachi = "https://api.openaq.org/v2/locations/1236037";
 $url_guangzhou = "https://api.openaq.org/v2/locations/7753";
-$url_dhaka = "https://api.openaq.org/v2/locations/2445";
+$url_kunjaban = "https://api.openaq.org/v2/locations/11583";
 $url_mae_hong_son = "https://api.openaq.org/v2/locations/225648";
 $url_hanoi = "https://api.openaq.org/v2/locations/2161312";
 
 $url = '';
-if ($get_location == 'kolkata') {
-    $url = $url_kolkata;
+if ($get_location == 'dhopagachi') {
+    $url = $url_dhopagachi;
 } else if($get_location == 'guangzhou') {
     $url = $url_guangzhou;
-} else if ($get_location == 'dhaka'){
-    $url = $url_dhaka;
+} else if ($get_location == 'kunjaban'){
+    $url = $url_kunjaban;
 } else if ($get_location == 'mae_hong_son'){
     $url = $url_mae_hong_son;
 } else if ($get_location == 'hanoi') {
