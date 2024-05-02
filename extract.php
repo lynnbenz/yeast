@@ -38,19 +38,25 @@ $data = json_decode($output, true);
 $result = $data['results'][0];
 
 $location = $result['name'];
-$lastvalue = $result['parameters']['lastValue'];
-$unit = $result['parameters']['unit'];
-$parameter = $result['parameters']['parameter'];
+
+$lastvalue = '';
+$unit = '';
+
+foreach ($result['parameters'] as $measurement) {
+    if ($measurement['parameter'] == 'pm25') {
+        $lastvalue = $measurement['lastValue'];
+        $unit = $measurement['unit'];
+    }
+}
 
 
 $air_quality[] = [
     'location' => $location,
     'lastvalue' => $lastvalue,
-    'unit' => $unit,
-    'parameter' => $parameter,
+    'unit' => $unit
     ];
 
-//print_r($air_quality);
+print_r($air_quality);
 //echo $air_quality [0]['latitude'];
 
 ?>
