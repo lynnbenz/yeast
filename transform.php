@@ -5,11 +5,11 @@ include 'extract.php';
 
 //make map with lat / lon to location
 $city  = [
-    '22.37,88.41' => 'Dhopagachi',
+    '22.3743,88.415' => 'Dhopagachi',
     '23.116785,113.318088' => 'Guangzhou',
-    '23.86,91.28' => 'Kunjaban',
-    '19.3,97.97' => 'Mae Hong Son',
-    '21.02,105.84' => 'Hanoi',
+    '23.8628276,91.2887362' => 'Kunjaban',
+    '19.30455,97.97165' => 'Mae Hong Son',
+    '21.2575,105.8514' => 'Hanoi',
 ];
 
 // new function air_quality_index
