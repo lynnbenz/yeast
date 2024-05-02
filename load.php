@@ -13,18 +13,17 @@ try {
     $pdo = new PDO($dsn, $username, $password, $options);
 
     // SQL-Query mit Platzhaltern für das Einfügen von Daten
-    $sql = "INSERT INTO airquality (location, lastvalue, unit, parameter) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO air_quality (location, lastValue, unit) VALUES (?, ?, ?)";
 
     // Bereitet die SQL-Anweisung vor
     $stmt = $pdo->prepare($sql);
 
     // Fügt jedes Element im Array in die Datenbank ein
-    foreach ($weather_data as $item) {
+    foreach ($air_quality as $item) {
         $stmt->execute([
             $item['location'],
-            $item['lastvalue'],
+            $item['lastValue'],
             $item['unit'],
-            $item['parameter'],
         ]);
     }
 
