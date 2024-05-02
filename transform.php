@@ -6,7 +6,7 @@ include 'extract.php';
 //make map with lat / lon to location
 $city  = [
     '22.37,88.41' => 'Dhopagachi',
-    '23.11,113.31' => 'Guangzhou',
+    '23.116785,113.318088' => 'Guangzhou',
     '23.86,91.28' => 'Kunjaban',
     '19.3,97.97' => 'Mae Hong Son',
     '21.02,105.84' => 'Hanoi',
@@ -28,9 +28,8 @@ function air_quality_color($lastvalue) {
 
 //Transorm data
 foreach ($air_quality as $index => $item) {
+    $air_quality[$index][''] = round($item['lastValue']);
 
-    $air_quality[$index][''] = round($item['lastValue']);   
-   
     //convert lat / lon to location
     $coordinates = $item['latitude'] . ',' . $item['longitude'];
    
