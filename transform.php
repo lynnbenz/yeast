@@ -42,7 +42,7 @@ foreach ($air_quality as $index => $item) {
 
 
 // add weather condition
-    $air_quality[$index]['air_quality'] = air_quality_color($item['lastValue'],);
+    $air_quality[$index]['air_quality_color'] = air_quality_color($item['lastValue'],);
 
 }
 
