@@ -5,27 +5,26 @@ include 'extract.php';
 
 //make map with lat / lon to location
 $city  = [
-    '22.56,88.36' => 'Kolkata',
+    '22.37,88.41' => 'Dhopagachi',
     '23.11,113.31' => 'Guangzhou',
-    '23.81,90.41' => 'Dhaka',
+    '23.86,91.28' => 'Kunjaban',
     '19.3,97.97' => 'Mae Hong Son',
     '21.02,105.84' => 'Hanoi',
 ];
 
 // new function air_quality_index
 function air_quality_color($lastvalue) {
-    if ($lastvalue <=  25) {
+    if ($lastvalue <=  50) {
         return 'good';
-    } elseif ($lastvalue <= 50) {
-        return 'moderate';
-    } elseif ($lastvalue <= 75) {
-        return 'unhealthy';
     } elseif ($lastvalue <= 100) {
+        return 'moderate';
+    } elseif ($lastvalue <= 150) {
+        return 'unhealthy';
+    } elseif ($lastvalue <= 200) {
         return 'dangerous';
     }
    
 }
-
 
 //Transorm data
 foreach ($air_quality as $index => $item) {
