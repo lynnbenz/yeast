@@ -3,15 +3,8 @@
 //include extract.php
 include 'extract.php';
 
-
-
-//echo "Hello World!";
-
-//print_r($air_quality);
-
-
 //make map with lat / lon to location
-$locations = [
+$city  = [
     '22.56,88.36' => 'Kolkata',
     '23.11,113.31' => 'Guangzhou',
     '23.81,90.41' => 'Dhaka',
@@ -43,7 +36,7 @@ foreach ($air_quality as $index => $item) {
     $coordinates = $item['latitude'] . ',' . $item['longitude'];
    
    // use map to get location
-    $air_quality[$index]['location'] = $locations[$coordinates];
+    $air_quality[$index]['location'] = $city [$coordinates];
 
     //remove lat / lon
     unset($air_quality[$index]['latitude']);
