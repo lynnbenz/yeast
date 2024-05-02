@@ -30,7 +30,7 @@ $output = curl_exec($ch);
 
 curl_close($ch);
 
-echo $output;
+// echo $output;
 
 
 //loop through the data / array with needed information 
@@ -49,14 +49,15 @@ foreach ($result['parameters'] as $measurement) {
     }
 }
 
-
 $air_quality[] = [
     'location' => $location,
-    'lastvalue' => $lastvalue,
-    'unit' => $unit
+    'lastValue' => $lastvalue,
+    'unit' => $unit,
+    'latitude' => $result['coordinates']['latitude'],
+    'longitude' => $result['coordinates']['longitude'],
     ];
 
-print_r($air_quality);
+// print_r($air_quality);
 //echo $air_quality [0]['latitude'];
 
 ?>
