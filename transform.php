@@ -29,7 +29,7 @@ function air_quality_color($lastvalue) {
 //Transorm data
 foreach ($air_quality as $index => $item) {
 
-    $air_quality[$index][''] = round($item['lastvalue']);   
+    $air_quality[$index][''] = round($item['lastValue']);   
    
     //convert lat / lon to location
     $coordinates = $item['latitude'] . ',' . $item['longitude'];
@@ -43,7 +43,7 @@ foreach ($air_quality as $index => $item) {
 
 
 // add weather condition
-    $air_quality[$index]['air_quality'] = air_quality_color($item['lastvalue'],);
+    $air_quality[$index]['air_quality'] = air_quality_color($item['lastValue'],);
 
 }
 
