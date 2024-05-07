@@ -19,9 +19,9 @@ try {
     $stmt = $pdo->query($query);
 
     // Fetch all the rows as an associative array
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Loop through the rows and print the values of the selected columns
+   while($rows = $stmt->fetchAll(PDO::FETCH_ASSOC))
+   
+   // Loop through the rows and print the values of the selected columns
     foreach ($rows as $row) {
         echo "Date: " . $row['date'] . ", Location: " . $row['location'] . ", Last Value: " . $row['lastValue'] . "<br>";
     }
