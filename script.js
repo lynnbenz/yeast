@@ -1,11 +1,10 @@
-console.log('Hello, world!');
+
 
 
 async function fetchData() {
     try {
         const response = await fetch('https://599768-3.web.fhgr.ch/endpoint.php');
         const data = await response.json();
-        return data;
         return data;
     } catch (error) {
         console.error(error);
@@ -23,9 +22,21 @@ console.log ('Location: ' + location);
 console.log ('Last Value: ' + lastValue);
 
 
+if (lastValue >= 0 && lastValue <= 50) {
+    document.getElementById('dhopagachi-pin').style.fill = 'green';
+} else if (lastValue >= 51 && lastValue <= 100) {
+    document.getElementById('dhopagachi-pin').style.fill = 'yellow';
+} else if (lastValue >= 101 && lastValue <= 150) {
+    document.getElementById('dhopagachi-pin').style.fill = 'orange';
+} else if (lastValue >= 151 && lastValue <= 200) {
+    document.getElementById('dhopagachi-pin').style.fill = 'red';
+} else {
+    // Handle the case when lastValue is outside the specified ranges
+    // You can set a default color or handle it in a different way
+}
 
 
-const ctx = document.getElementById('myChart').getContext('2d');
+// const ctx = document.getElementById('myChart').getContext('2d');
 
 async function fetchData() {
     try {
@@ -81,7 +92,7 @@ async function main() {
 
     createLineChart(date, lastValue);
 }
+}
 
 main();
-}
 
