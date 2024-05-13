@@ -8,10 +8,10 @@
 			padding:0;
 			box-sizing: border-box;
 			font-family: 'Roboto', 'sans-serif';
-      text-decoration: none;
+            text-decoration: none;
 		}
 
-
+    
 
         /* ========================================*/ 
         /* BASIS KLASSEN FÜR FARBEN UND TITEL*/
@@ -24,13 +24,16 @@
             font-family: 'Roboto', 'sans-serif';
             font-size: 3rem;
             line-height: 70px;
+            text-align: center;
+            padding-top: 20px;
         }
 
         h2{
             color: black;
             font-family: 'Roboto', 'sans-serif';
-            font-size: 3rem;
+            font-size: 1.5rem;
             line-height: 70px;
+            text-align: center;
         }     
 
         h3{
@@ -38,20 +41,23 @@
             font-size: 1.1rem;
             font-family: 'Roboto', 'sans-serif';
             line-height: 2.2rem; 
+            text-align: center;
         }
 
         p{
             font-family: 'Roboto', 'sans-serif';
             font-size: 1.1rem;
             color: var(--schriftgrau);
-            line-height: 2.2rem;  
+            line-height: 2.2rem; 
+            text-align: center;  
         }
         
         a {
             font-family: 'Roboto', 'sans-serif';
             font-size: 1.1rem;
             color: var(--schriftgrau);
-            line-height: 2.2rem;  
+            line-height: 2.2rem; 
+           
         }
 
 
@@ -60,42 +66,7 @@
         /* NAVIGATION */
         /* ========================================*/
 
-        nav {
-            background-color: ghostwhite;
-            box-shadow: 3px 3px 3px var(--schriftgrau);
-            height: 100px;
-        }
-
-
-        @media only screen and (max-width: 700px) {
-            /* Für Mobilgeräte: */
-
-            #desktopnavigation {
-                display: none;
-            }
-           
-            #mobilnavigation {
-                display: flex;
-                padding: 10px 5px;
-                position: relative;
-             }
-
-            #mobilnav_optionen {
-                display: none;
-            }
-
-            #container_nav_l_mobil {
-                display: flex;
-                text-align: center;
-                width: 25vw;
-                height: 50px;
-            }
-
-            #container_nav_r_mobil {
-                display: flex;
-                width: 48vw;
-            }
-          }
+        
 
      
 	
@@ -104,10 +75,60 @@
         /* ========================================*/
         /* Bordered form */
 
+        .background{
+            background-image: url("../bilder/asien_background.jpg");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        img {
+            max-width: 600px;
+            margin-left: 460px ;
+        }
+
         #map { height: 180px; }
 
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            padding: 20px;
+          }
 
+        .gruenes_grid {
+            display: flex;
+            flex-direction: column;
+            background-color:lightgreen;
+            justify-content: start;
+            background-size:contain;
+            background-position: center right;
+            background-repeat: no-repeat;
+            max-width: 550px;
+            height: 200px;
+            margin-left: 150px;
+            border-radius: 10px;
+            border: 1px solid black;
+            
+        }
 
+        .red_grid {
+            display: flex;
+            flex-direction: column;
+            background-color: lightcoral;
+            justify-content: start;
+            background-size:contain;
+            background-position: center right;
+            background-repeat: no-repeat;
+            max-width: 550px;
+            height: 200px;
+            margin-right: 150px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+       
 
          /* ========================================*/
         /* FOOTER */
