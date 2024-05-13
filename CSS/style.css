@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+  
+
+
+  
+  *{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+			font-family: 'Roboto', 'sans-serif';
+      text-decoration: none;
+		}
+
+
+
+        /* ========================================*/ 
+        /* BASIS KLASSEN FÜR FARBEN UND TITEL*/
+        /* ========================================*/
+
+
+
+        h1 {
+            color: black;
+            font-family: 'Roboto', 'sans-serif';
+            font-size: 3rem;
+            line-height: 70px;
+        }
+
+        h2{
+            color: black;
+            font-family: 'Roboto', 'sans-serif';
+            font-size: 3rem;
+            line-height: 70px;
+        }     
+
+        h3{
+            color:var(--schriftgrau);
+            font-size: 1.1rem;
+            font-family: 'Roboto', 'sans-serif';
+            line-height: 2.2rem; 
+        }
+
+        p{
+            font-family: 'Roboto', 'sans-serif';
+            font-size: 1.1rem;
+            color: var(--schriftgrau);
+            line-height: 2.2rem;  
+        }
+        
+        a {
+            font-family: 'Roboto', 'sans-serif';
+            font-size: 1.1rem;
+            color: var(--schriftgrau);
+            line-height: 2.2rem;  
+        }
+
+
+
+        /* ========================================*/
+        /* NAVIGATION */
+        /* ========================================*/
+
+        nav {
+            background-color: ghostwhite;
+            box-shadow: 3px 3px 3px var(--schriftgrau);
+            height: 100px;
+        }
+
+
+        @media only screen and (max-width: 700px) {
+            /* Für Mobilgeräte: */
+
+            #desktopnavigation {
+                display: none;
+            }
+           
+            #mobilnavigation {
+                display: flex;
+                padding: 10px 5px;
+                position: relative;
+             }
+
+            #mobilnav_optionen {
+                display: none;
+            }
+
+            #container_nav_l_mobil {
+                display: flex;
+                text-align: center;
+                width: 25vw;
+                height: 50px;
+            }
+
+            #container_nav_r_mobil {
+                display: flex;
+                width: 48vw;
+            }
+          }
+
+     
+	
+		/* ========================================*/
+        /* Startseite  */
+        /* ========================================*/
+        /* Bordered form */
+
+        #map { height: 180px; }
+
+
+
+
+         /* ========================================*/
+        /* FOOTER */
+        /* ========================================*/
+		
+        footer {
+            background-color: whitesmoke;
+            display: flex;
+            height: 100%;
+            line-height: 1.1rem;
+			padding: 15px 10px 15px 10px;
+			position:relative;
+			width: 100%;
+        }
+        
+
+
+
