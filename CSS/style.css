@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
   
 
@@ -9,9 +11,8 @@
 			box-sizing: border-box;
 			font-family: 'Roboto', 'sans-serif';
             text-decoration: none;
-		}
-
-    
+          
+  }
 
         /* ========================================*/ 
         /* BASIS KLASSEN FÜR FARBEN UND TITEL*/
@@ -75,20 +76,17 @@
         /* ========================================*/
         /* Bordered form */
 
-        .background{
-            background-image: url("../bilder/asien_background.jpg");
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
         
         img {
             max-width: 600px;
             margin-left: 460px ;
         }
 
-        #map { height: 180px; }
+        path {
+            &.show {
+                fill: var(--green);
+            }
+          }
 
         .main-grid {
             display: grid;
