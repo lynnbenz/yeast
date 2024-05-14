@@ -57,23 +57,16 @@ async function main(dayDifference = 0) {
             }
         });
 
-      /*  // Calculate the average of the lastValue of every city
-        const averageLastValue = data.reduce((sum, location) => sum + location.lastValue, 0) / data.length;
-        console.log('Average Last Value:', averageLastValue);
-
-        // Find the lowest and highest lastValue
-        const lowestLastValue = Math.min(...data.map(location => location.lastValue));
-        const highestLastValue = Math.max(...data.map(location => location.lastValue));
-        console.log('Lowest Last Value:', lowestLastValue);
-        console.log('Highest Last Value:', highestLastValue);
+        // Create line chart based on fetched data  
 
        
-    } else {
-        console.error('Failed to fetch data.');
-    }
+   
 }
-*/
+    const labels = data.map((element) => element.date);
+    const values = data.map((element) => element.lastValue);
 
+    createLineChart(labels, values);
+}
 
 // const ctx = document.getElementById('myChart').getContext('2d');
 
@@ -110,8 +103,8 @@ function createLineChart(labels, data) {
         }
     });
 }
-    }
-}
+    
+
 
 
 main();
