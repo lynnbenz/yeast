@@ -10,31 +10,30 @@ async function fetchData() {
         console.error(error);
     }
 }
-
 async function main() {
-let data = await fetchData();
-console.log(data[8]);
-let date = data.dates;
-let location = data.locations;
-let lastValue = data.lastValues;
+    let data = await fetchData();
+    let date = data.dates;
+    let location = data.locations;
+    let lastValue = data.lastValues;
 
-console.log ('Date: ' + date);
-console.log ('Location: ' + location);      
-console.log ('Last Value: ' + lastValue);
+    console.log('Date: ' + date);
+    console.log('Location: ' + location);
+    console.log('Last Value: ' + lastValue);
 
-
-if (lastValue >= 0 && lastValue <= 50) {
-    document.getElementById('dhopagachi-pin').style.fill = 'green';
-} else if (lastValue >= 51 && lastValue <= 100) {
-    document.getElementById('dhopagachi-pin').style.fill = 'yellow';
-} else if (lastValue >= 101 && lastValue <= 150) {
-    document.getElementById('dhopagachi-pin').style.fill = 'orange';
-} else if (lastValue >= 151 && lastValue <= 200) {
-    document.getElementById('dhopagachi-pin').style.fill = 'red';
-} else {
-    // Handle the case when lastValue is outside the specified ranges
-    // You can set a default color or handle it in a different way
+    if (lastValue >= 0 && lastValue <= 50) {
+        document.getElementById('dhopagachi-pin').style.fill = 'green';
+    } else if (lastValue >= 51 && lastValue <= 100) {
+        document.getElementById('dhopagachi-pin').style.fill = 'yellow';
+    } else if (lastValue >= 101 && lastValue <= 150) {
+        document.getElementById('dhopagachi-pin').style.fill = 'orange';
+    } else if (lastValue > 150) {
+        document.getElementById('dhopagachi-pin').style.fill = 'red';
+    } else {
+        // Handle the case when lastValue is outside the specified ranges
+        // You can set a default color or handle it in a different way
+    }
 }
+
 
 
 // const ctx = document.getElementById('myChart').getContext('2d');
@@ -83,17 +82,79 @@ function createLineChart(labels, data) {
     });
 }
 
+main();
+
 async function main() {
     let data = await fetchData();
-    let date = data.date;
-    let lastValue = data.lastValue;
+    let date = data.dates;
+    let lastValue = data.lastValues;
 
     console.log('Date: ' + date);
     console.log('Last Value: ' + lastValue);
 
     createLineChart(date, lastValue);
 }
+
+
+
+// Slider für die Auswahl des Datums
+
+const airQualityData = [
+    { date: "2024-05-01",},
+    { date: "2024-05-02", },
+    { date: "2024-05-03", },
+    { date: "2024-05-04",  },
+    { date: "2024-05-05",  },
+    { date: "2024-05-06",  },
+    { date: "2024-05-07",  },
+    { date: "2024-05-08",  },
+    { date: "2024-05-09",  },
+    { date: "2024-05-10",  },
+    { date: "2024-05-11",  },
+    { date: "2024-05-12",  },
+    { date: "2024-05-13",  },
+    { date: "2024-05-14",  }
+];
+
+let currentDayIndex = airQualityData.length - 1;
+
+// Funktion zum Aktualisieren der Luftqualität-Anzeige
+function updateAirQuality() {
+    const slider = document.getElementById("dateSlider");
+    const airQualityDisplay = document.getElementById("air-quality");
+
+    // Index des ausgewählten Tages aus dem Slider-Wert erhalten
+    const selectedDayIndex = parseInt(slider.value);
+
+    // Luftqualität für den ausgewählten Tag anzeigen
+    const selectedDay = airQualityData[selectedDayIndex];
+    airQualityDisplay.textContent = `Luftqualität am ${selectedDay.date}: ${selectedDay.quality}`;
 }
+
+// Funktion für den "Zurück"-Button
+function prevDay() {
+    const slider = document.getElementById("dateSlider");
+    if (currentDayIndex > 0) {
+        currentDayIndex--;
+        slider.value = currentDayIndex;
+        updateAirQuality();
+    }
+}
+
+// Funktion für den "Vor"-Button
+function nextDay() {
+    const slider = document.getElementById("dateSlider");
+    if (currentDayIndex < airQualityData.length - 1) {
+        currentDayIndex++;
+        slider.value = currentDayIndex;
+        updateAirQuality();
+    }
+}
+
+// Initialisierung der Luftqualität-Anzeige beim Laden der Seite
+window.onload = function() {
+    updateAirQuality();
+};
 
 main();
 
