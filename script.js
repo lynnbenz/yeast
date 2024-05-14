@@ -13,9 +13,10 @@ async function fetchData() {
 
 async function main() {
 let data = await fetchData();
-let date = data.date;
-let location = data.location;
-let lastValue = data.lastValue;
+console.log(data[8]);
+let date = data.dates;
+let location = data.locations;
+let lastValue = data.lastValues;
 
 console.log ('Date: ' + date);
 console.log ('Location: ' + location);      
