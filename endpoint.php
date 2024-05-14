@@ -21,8 +21,9 @@ try {
     $locations = [];
     $lastValues = [];
 
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // Fetch all the rows as an associative array
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    /*while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         // Store the values in the respective arrays
         $dates[] = $row['date'];
         $locations[] = $row['location'];
@@ -39,10 +40,10 @@ try {
         'dates' => $dates,
         'locations' => $locations,
         'lastValues' => $lastValues
-    ];
+    ];*/
 
     // Convert the data array to JSON format
-    $json = json_encode($data, JSON_NUMERIC_CHECK);
+    $json = json_encode($rows, JSON_NUMERIC_CHECK);
 
     // Set the Content-Type header to application/json
     header('Content-Type: application/json');
