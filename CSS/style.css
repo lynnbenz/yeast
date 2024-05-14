@@ -126,7 +126,19 @@
             border: 1px solid black;
         }
 
+       .slider-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
        
+        .button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            
+        }
 
          /* ========================================*/
         /* FOOTER */
