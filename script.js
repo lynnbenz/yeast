@@ -57,7 +57,7 @@ async function main(dayDifference = 0) {
             }
         });
 
-        // Calculate the average of the lastValue of every city
+      /*  // Calculate the average of the lastValue of every city
         const averageLastValue = data.reduce((sum, location) => sum + location.lastValue, 0) / data.length;
         console.log('Average Last Value:', averageLastValue);
 
@@ -72,19 +72,7 @@ async function main(dayDifference = 0) {
         console.error('Failed to fetch data.');
     }
 }
-
-// Find the city with the lowest lastValue
-const cityWithLowestLastValue = data.find(location => location.lastValue === lowestLastValue);
-console.log('City with Lowest Last Value:', cityWithLowestLastValue.location);
-
-// Find the city with the highest lastValue
-const cityWithHighestLastValue = data.find(location => location.lastValue === highestLastValue);
-console.log('City with Highest Last Value:', cityWithHighestLastValue.location);
-
-// Initialize the main function when DOM content is loaded
-document.addEventListener('DOMContentLoaded', () => {
-   
-});
+*/
 
 
 // const ctx = document.getElementById('myChart').getContext('2d');
@@ -122,5 +110,9 @@ function createLineChart(labels, data) {
         }
     });
 }
+    }
+}
+
 
 main();
+
