@@ -150,6 +150,14 @@
         <h2>here is the timeline</h2>
         <br>
         <br>
+        <div id="slider-container">
+          <button onclick="prevDay()">vor 14 Tagen</button>
+          <input type="range" min="0" max="13" value="13" id="dateSlider" onchange="updateAirQuality()">
+          <button onclick="nextDay()">Heute</button>
+         
+      </div>
+  
+      <script src="slider.js"></script>
         <br>
         <br>
         <h3> this is currently the city with the best air quality</h3>
