@@ -22,25 +22,7 @@ try {
     $lastValues = [];
 
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // Fetch all the rows as an associative array
-    /*while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        // Store the values in the respective arrays
-        $dates[] = $row['date'];
-        $locations[] = $row['location'];
-        $lastValues[] = $row['lastValue'];
-    }
-
-    // Loop through the arrays and print the values
-    //for ($i = 0; $i < count($dates); $i++) {
-     //   echo "Date: " . $dates[$i] . ", Location: " . $locations[$i] . ", Last Value: " . $lastValues[$i] . "<br>";
-   // }
-
-    // Create an associative array to store the data
-    $data = [
-        'dates' => $dates,
-        'locations' => $locations,
-        'lastValues' => $lastValues
-    ];*/
+   
 
     // Convert the data array to JSON format
     $json = json_encode($rows, JSON_NUMERIC_CHECK);
