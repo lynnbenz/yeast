@@ -1,206 +1,280 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-  
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'sans-serif';
+  text-decoration: none;
+}
+
+/* ========================================*/
+/* BASIS KLASSEN FÜR FARBEN UND TITEL*/
+/* ========================================*/
+
+h1 {
+  color: black;
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 3rem;
+  line-height: 50px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+h2 {
+  color: black;
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 1.5rem;
+  line-height: 50px;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+h3 {
+  color: var(--schriftgrau);
+  font-size: 1.1rem;
+  font-family: 'Roboto', 'sans-serif';
+  line-height: 2.2rem;
+  text-align: center;
+}
+
+p {
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 1.1rem;
+  color: var(--schriftgrau);
+  line-height: 2.2rem;
+  text-align: center;
+}
+
+a {
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 1.1rem;
+  color: var(--schriftgrau);
+  line-height: 2.2rem;
+  text-align: center;
+
+}
 
 
-  
-  *{
-			margin:0;
-			padding:0;
-			box-sizing: border-box;
-			font-family: 'Roboto', 'sans-serif';
-            text-decoration: none;
-          
+/* ========================================*/
+/* Startseite  */
+/* ========================================*/
+/* Bordered form */
+
+.grafik {
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.map {
+  max-width: 50%;
+  margin-left: 25%;
+}
+
+#Dhopagachi-text {
+  display: none;
+  fill: white;
+}
+
+#Hanoi-text {
+  display: none;
+  fill: white;
+}
+
+#Kunjaban-text {
+  display: none;
+  fill: white;
+}
+
+#Guangzhou-text {
+  display: none;
+  fill: white;
+}
+
+#Mae_Hong_Son-text {
+  display: none;
+  fill: white;
+}
+
+.slidecontainer {
+  width: 500px;
+  margin: auto;
+}
+
+.slider {
+  -webkit-appearance: none;
+  margin: center;
+  width: 95%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1;
+
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: black;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: black;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: black;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px 40px;
+}
+
+.gruenes_grid {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgreen;
+  justify-content: start;
+  background-size: contain;
+  background-position: center right;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.red_grid {
+  display: flex;
+  flex-direction: column;
+  background-color: lightcoral;
+  justify-content: start;
+  background-size: contain;
+  background-position: center right;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.container-text {
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  width: 50%;
+  padding: 0 20px;
+}
+
+.text-1 {
+  text-align: justify;
+  margin-top: 20px;
+  padding-left: 40px;
+}
+
+.text-2 {
+  text-align: justify;
+  margin-top: 20px;
+  padding-right: 40px;
+}
+
+@media only screen and (max-width: 700px) {
+  /* Für Mobilgeräte: */
+
+  /*img {
+    max-width: 100%;
+    margin: center;
+    margin-left: 0px;
+  }*/
+
+  h1 {
+    font-size: 1.5rem;
   }
 
-        /* ========================================*/ 
-        /* BASIS KLASSEN FÜR FARBEN UND TITEL*/
-        /* ========================================*/
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  a {
+    font-size: 1.2rem;
+  }
 
 
+  .map {
+    max-width: 80%;
+    margin-left: 10%;
+  }
 
-        h1 {
-            color: black;
-            font-family: 'Roboto', 'sans-serif';
-            font-size: 3rem;
-            line-height: 70px;
-            text-align: center;
-            padding-top: 20px;
-        }
+  .slidecontainer {
+    width: 80%;
+    margin: center;
+  }
 
-        h2{
-            color: black;
-            font-family: 'Roboto', 'sans-serif';
-            font-size: 1.5rem;
-            line-height: 70px;
-            text-align: center;
-        }     
+  .main-grid {
+    display: flex;
+    flex-direction: column;
+    padding: auto;
+  }
 
-        h3{
-            color:var(--schriftgrau);
-            font-size: 1.1rem;
-            font-family: 'Roboto', 'sans-serif';
-            line-height: 2.2rem; 
-            text-align: center;
-        }
+  .gruenes_grid {
+    max-width: 550px;
+    margin: 0 auto;
+  }
 
-        p{
-            font-family: 'Roboto', 'sans-serif';
-            font-size: 1.1rem;
-            color: var(--schriftgrau);
-            line-height: 2.2rem; 
-            text-align: center;  
-        }
-        
-        a {
-            font-family: 'Roboto', 'sans-serif';
-            font-size: 1.1rem;
-            color: var(--schriftgrau);
-            line-height: 2.2rem; 
-           
-        }
+  .red_grid {
+    max-width: 550px;
+    margin: 0 auto;
+  }
 
+  .container-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .column {
+    width: 100%;
+    padding: 0 20px;
+  }
 
-        /* ========================================*/
-        /* NAVIGATION */
-        /* ========================================*/
-
-        
-
-     
-	
-		/* ========================================*/
-        /* Startseite  */
-        /* ========================================*/
-        /* Bordered form */
-
-        
-        img {
-            max-width: 600px;
-            margin-left: 460px ;
-        }
-
-        path {
-            &.show {
-                fill: var(--green);
-            }
-          }
-
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 20px;
-            padding: 20px;
-          }
-
-        .gruenes_grid {
-            display: flex;
-            flex-direction: column;
-            background-color:lightgreen;
-            justify-content: start;
-            background-size:contain;
-            background-position: center right;
-            background-repeat: no-repeat;
-            max-width: 550px;
-            height: 200px;
-            margin-left: 150px;
-            border-radius: 10px;
-            border: 1px solid black;
-            
-        }
-
-        .red_grid {
-            display: flex;
-            flex-direction: column;
-            background-color: lightcoral;
-            justify-content: start;
-            background-size:contain;
-            background-position: center right;
-            background-repeat: no-repeat;
-            max-width: 550px;
-            height: 200px;
-            margin-right: 150px;
-            border-radius: 10px;
-            border: 1px solid black;
-        }
-
-        .slidecontainer {
-            width: 500px; /* Width of the outside container */
-            margin: auto;
-          }
-          
-          /* The slider itself */
-          .slider {
-            -webkit-appearance: none;  /* Override default CSS styles */
-            width: 100%;
-            height: 15px;
-            border-radius: 5px;  
-            background: #d3d3d3;
-            outline: none;
-            opacity: 0.7;
-            -webkit-transition: .2s;
-            transition: opacity .2s;
-          }
-          
-          /* Mouse-over effects */
-          .slider:hover {
-            opacity: 1; /* Fully shown on mouse-over */
-          }
-          
-          /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-          .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 25px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #04AA6D; /* Green background */
-            cursor: pointer; /* Cursor on hover */
-          }
-          
-          .slider::-moz-range-thumb {
-            width: 25px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #04AA6D; /* Green background */
-            cursor: pointer; /* Cursor on hover */
-          }
-
-        
-        
-          .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%; 
-            background: #04AA6D;
-            cursor: pointer;
-          }
-          
-          .slider::-moz-range-thumb {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: #04AA6D;
-            cursor: pointer;
-          }
-          
-
-         /* ========================================*/
-        /* FOOTER */
-        /* ========================================*/
-		
-        footer {
-            background-color: whitesmoke;
-            display: flex;
-            height: 100%;
-            line-height: 1.1rem;
-			padding: 15px 10px 15px 10px;
-			position:relative;
-			width: 100%;
-        }
-        
-
-
-
+  .text-1,
+  .text-2 {
+    padding: 0;
+  }
+}
