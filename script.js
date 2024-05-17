@@ -25,7 +25,7 @@ async function updatePinColors(data, formattedDate) {
             if (locationObject.lastValue >= 0 && locationObject.lastValue <= 50) {
                 pinElement.style.fill = 'lightgreen';
             } else if (locationObject.lastValue >= 51 && locationObject.lastValue <= 100) {
-                pinElement.style.fill = 'lightyellow';
+                pinElement.style.fill = 'gold';
             } else if (locationObject.lastValue >= 101 && locationObject.lastValue <= 150) {
                 pinElement.style.fill = 'lightorange';
             } else if (locationObject.lastValue >= 151 && locationObject.lastValue <= 200) {
@@ -98,13 +98,14 @@ function findCityWithExtremumValue(data, comparator) {
     return extremumCity;
 }
 
+
 // Daten für die Berechnungen
 const cityData = [
-    { city: 'Dhopagachi', lastValue: 45 },
-    { city: 'Kunjaban', lastValue: 60 },
-    { city: 'Hanoi', lastValue: 35 },
-    { city: 'Guangzhou', lastValue: 70 },
-    { city: 'Mae Hong Son', lastValue: 25 }
+    { city: 'Dhopagachi', lastValue: 69},
+    { city: 'Kunjaban', lastValue: 68 },
+    { city: 'Hanoi', lastValue: 25 },
+    { city: 'Guangzhou', lastValue: 30 },
+    { city: 'Mae Hong Son', lastValue: 21 }
 ];
 
 // Berechnungen ausführen und Ergebnisse anzeigen
@@ -114,3 +115,5 @@ const cityWithHighestValue = findCityWithExtremumValue(cityData, 'max');
 
 document.getElementById('lowestLastValue').textContent = cityWithLowestValue;
 document.getElementById('highestLastValue').textContent = cityWithHighestValue;
+
+
